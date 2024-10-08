@@ -1,25 +1,30 @@
-# BEng_HCMR_Project
+## HCM LVOTO Landmark Analysis AI Tool
 
-The BEng_HCMR_Project repository contains the full code behind the deep learning pipeline for automatic landmark detection of anatomical features from CMR images and the predictive machine learning models for determining obstruction in HCM. 
+### Project Overview
+The aim of the project was to create a pipeline that can automatically detect anatomical landmarks in cardiac magnetic resonance (CMR) images using deep learning and predict the presence of left ventricular outflow tract obstruction (LVOTO) in hypertrophic cardiomyopathy (HCM) patients using machine learning models. 
 
-The repository contains the following files:
+### Repository Contents
 
-‘heatmap.py’: generates heatmaps from annotated .nii files 
+- ‘heatmap.py’: Python code to generate heatmaps from annotated .nii files 
 
-‘prep_train_roi’ : training code for the ROI network
+- ‘prep_train_roi’ : Python code used to train the region of interest (ROI) network
 
-‘prep_train_ld’: training code for the landmark detection network
+- ‘prep_train_ld’: Python code used to train the landmark detection network
 
-‘prep_test_5_fold.py’: testing code for the ROI and landmark detection networks
+- ‘prep_test_5_fold.py’: Python code used to test the ROI and landmark detection networks
 
-‘landmark_nn.py’: inferencing code for obtaining model landmark predictions 
+- ‘landmark_nn.py’: Python code used for inferencing to predict anatomical landmarks 
 
-‘save_label_csv.py’: generates csv files with landmark coordinates extracted from annotated .nii files
+- ‘save_label_csv.py’: Python code used to generate .csv files with landmark coordinates extracted from annotated .nii files
 
-‘quality_control.py’: detects outlier cases based on the predicted landmarks for quality control
+- ‘quality_control.py’: Python code used to detect outlier cases based on the predicted landmarks for quality control
 
-‘get_distances.py’: determines the five frames of interest and computes distances between the predicted landmarks
+- ‘get_distances.py’: Python code to compute distances between predicted landmarks in the five frames of interest
 
-‘pls_regression.py’: PLS regression model for prediction of obstruction using the predicted distances
+- ‘pls_regression.py’: Python code for the PLS regression model to predict LVOTO based on the computed distances between landmarks
 
-‘logistic_regression.py’: Logistic regression classifier for prediction of obstruction using the predicted distances
+- ‘logistic_regression.py’: Python code for the Logistic regression classifier to predict LVOTO based on the computed distances between landmarks
+
+### Documentation
+For more details about the methodology, please refer to the following paper:
+- Machine learning evaluation of LV outflow obstruction in hypertrophic cardiomyopathy using three-chamber cardiovascular magnetic resonance M Sahota, SR Saraskani, H Xu, L Li, AW Majeed, U Hermida, S Neubauer, M Desai, W Weintraub, P Desvigne-Nickens, J Schulz-Menger, RY Kwong, CM Kramer, AA Young and P Lamata on behalf of the HCMR investigators (https://link.springer.com/article/10.1007/s10554-022-02724-7#Sec2)
